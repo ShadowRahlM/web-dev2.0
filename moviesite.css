@@ -1,0 +1,127 @@
+:root {
+  --gap-size: 1.5em;
+  --width: 90%
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 200%;
+  margin: auto;
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  font-family: "Gowun Batang", serif;
+}
+
+nav {
+  background-color: white;
+  color: orange;
+  padding: 0.5em 0.1em;
+  margin: auto;
+  width: var(--width)
+}
+nav h1{
+  padding: 5px;
+}
+nav li{
+  list-style: none;
+}
+
+.navigation li a {
+  color: black;
+  display: flex;
+  text-decoration: underline;
+}
+
+.heading {
+  text-shadow: 0.5px 0.4px;
+  color: whitesmoke;
+  margin-bottom: 1px;
+  text-decoration: underline;
+  text-decoration-color: brown;
+
+}
+
+.main {
+  color: orange;
+  background-color: #363062;
+  padding: 60px;
+  margin:auto;
+  border:2px solid black;
+  width: 90%;
+}
+
+.heading {
+  color: orange;
+  text-align: center;
+}
+
+.removed {
+  color: whitesmoke;
+}
+
+.btn {
+  color: black;
+  background-color: orange;
+  display: block;
+  width: 39.5%;
+  margin-top: 8px;
+   border-radius:7px ;
+}
+
+.sub-head {
+  background-color: whitesmoke;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.list-nav {
+  a {
+    color: orange;
+  }
+
+  a:visited {
+    color: #bbbbbb;
+  }
+
+  a:hover {
+    color: grey;
+  }
+
+  a:active {
+    color: #ffa64d;
+  }
+}
+
+.change {
+  color: white;
+}
+
+.last-last {
+  a {
+    color: white;
+  }
+
+  list-style: decimal;
+}
+
+.footing {
+  color: orange;
+  padding: 25px;
+  background-color: #363062;
+  width:90%;
+  margin: auto;
+}
+
+
+#image {
+ width: auto;
+ margin-bottom:20px;
+}

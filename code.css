@@ -1,0 +1,32 @@
+:root{
+    --gap-size: 1.5rem;
+}
+*,
+::before,
+::after{
+    box-sizing: border-box;
+}
+html{
+    color: whitesmoke;
+    background-color: cadetblue;
+    padding: 2rem 4em;
+}
+.site-nav {
+    display: flex;
+    padding: 0.5rem;
+    background-color: #5f4b44;
+    list-style-type: none;
+    border-radius: 2em;
+
+}
+.site-nav>li>a {
+    color: #fff;
+    background-color: #cc6b5a;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em 1em;
+    gap: var(--gap-size);
+    margin-inline: 0.4rem;
+    border-radius: 0.5rem;
+}
+
