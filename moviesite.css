@@ -39,7 +39,7 @@ nav li{
 }
 
 .heading {
-  text-shadow: 0.5px 0.4px;
+  text-shadow: 2px 3px cornflowerblue;
   color: whitesmoke;
   margin-bottom: 1px;
   text-decoration: underline;
