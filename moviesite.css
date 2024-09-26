@@ -1,6 +1,6 @@
 :root {
   --gap-size: 1.5em;
-  --width: 90%
+  --width: 90%;
 }
 
 *,
@@ -17,18 +17,17 @@ html {
   padding: 5px;
   font-family: "Gowun Batang", serif;
 }
-
 nav {
   background-color: white;
   color: orange;
   padding: 0.5em 0.1em;
   margin: auto;
-  width: var(--width)
+  width: var(--width);
 }
-nav h1{
+nav h1 {
   padding: 5px;
 }
-nav li{
+nav li {
   list-style: none;
 }
 
@@ -42,23 +41,17 @@ nav li{
   text-shadow: 2px 3px cornflowerblue;
   color: whitesmoke;
   margin-bottom: 1px;
-  text-decoration: underline;
   text-decoration-color: brown;
-
+  color: orange;
+  text-align: center;
 }
 
 .main {
   color: orange;
   background-color: #363062;
   padding: 60px;
-  margin:auto;
-  border:2px solid black;
+  margin: auto; 
   width: 90%;
-}
-
-.heading {
-  color: orange;
-  text-align: center;
 }
 
 .removed {
@@ -69,9 +62,12 @@ nav li{
   color: black;
   background-color: orange;
   display: block;
-  width: 39.5%;
-  margin-top: 8px;
-   border-radius:7px ;
+  width: 36.5%; 
+  margin-top: 10px;
+  margin-right:5px;
+  border-radius: 7px;
+  padding: 2.5px;
+
 }
 
 .sub-head {
@@ -116,12 +112,11 @@ nav li{
   color: orange;
   padding: 25px;
   background-color: #363062;
-  width:90%;
+  width: 90%;
   margin: auto;
 }
 
-
 #image {
- width: auto;
- margin-bottom:20px;
+  width: auto;
+  margin-bottom: 20px;
 }
