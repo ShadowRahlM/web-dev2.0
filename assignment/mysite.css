@@ -1,0 +1,236 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+:root {
+  --bg-color: #ffffff;
+  --big-font: 3rem;
+  margin: 0;
+  padding: 0;
+  --text-color: #006e7f;
+  --second-color: #393647;
+  --main-color: #f8cb2e;
+  --main-color-two: #f75023;
+}
+/* html{
+  background-image: url(images/sukuna.png);
+
+} */
+body {
+  background-color: #ffffff;
+  color: var(--text-color);
+  /* background-image: url(/../sukuna/Screenshot_2023-12-22_09_58_49.png); */
+  font-family: "Barlow", sans-serif;
+}
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(26, 45, 46);
+  padding: 2rem 10%;
+  /* transition: 0.3s; */
+  /* z-index: 2; */
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+.head-logo {
+  color: #f8cb2e;
+}
+nav {
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  a:hover {
+    color: var(--main-color);
+  }
+}
+nav ul li {
+  list-style: none;
+  display: inline-flex;
+  margin-bottom: 10px;
+  font-size: 20px;
+  /* text-decoration: none; */
+
+  /* align-items: flex-start; */
+  flex: 1 20px;
+}
+nav ul li a {
+  display: inline;
+  margin: 20px;
+  color: #006e7f;
+  text-decoration: none;
+  a:hover {
+    color: var(--main-color);
+  }
+}
+.start {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin: 80px auto;
+}
+.desgin {
+  /* display:block; */
+  justify-content: start;
+  align-items: center;
+  margin: 8em;
+}
+.desgin h3 {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.desgin h1 {
+  margin: 1rem 0rem;
+  font-size: var(--big-font);
+  line-height: 1;
+  font-weight: 300;
+  color: var(--text-color);
+}
+.desgin h5 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+.desgin a img {
+  display: inline-flex;
+  margin: auto 20px;
+  gap: 20px;
+}
+.btn {
+  margin: 10px;
+  border-radius: 20px;
+  background-color: var(--main-color);
+  outline: none;
+  border: none;
+  padding: 12px;
+  transform: scale(1.1);
+  background: var(--main-color);
+  /* transition: 0.5s; */
+}
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+.btn :hover {
+  transform: scale(1.1);
+}
+
+.change-color {
+  color: var(--main-color);
+}
+p {
+  color: black;
+}
+
+.image {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+.btn {
+  display: block;
+}
+
+.about {
+  display: flex;
+  /* justify-content: center;
+  margin-top: 60px;
+  align-items: flex-start */
+}
+.about_me {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  align-items: center;
+}
+.image-container {
+  display: flex;
+  width: 400px;
+  margin-top: 1em;
+  /* height: 50vh; */
+  justify-content: space-evenly;
+  margin-left: 5em;
+}
+.about h3 {
+  display: flex;
+  color: #f8cb2e;
+  color: var(--main-color);
+  /* align-items: start; */
+  /* justify-content: center; */
+  padding: 1rem;
+  font-size: 4em;
+}
+.about_me .direct {
+  justify-content: center;
+  margin: 1.5rem;
+}
+.direct h1 {
+  font-size: var(--big-font);
+}
+
+#projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-tile {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--text-color);
+  flex-wrap: wrap;
+  /* transition: ease .3s; */
+}
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+}
+.heading h2 {
+  font-size: var(--big-font);
+  font-weight: 300;
+  margin: 0.5rem 0rem 1.3rem;
+  line-height: 1.1;
+}
+.heading h3 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.heading p {
+  font-size: var(--p-font);
+  color: var(--second-color);
+  line-height: 1.8rem;
+}
+.contacting{
+  display: inline-block;
+  text-align: center;
+  margin:  auto 35rem;
+
+}
+.contacting h2{
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.contacting btn{
+  margin:auto 2rem;
+  text-align: center;
+}
+.contacting .anchor{
+  margin: 2rem 8em;
+  padding: 4rem;
+}
+.below p {
+  text-align: center;
+}
