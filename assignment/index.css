@@ -29,7 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(26, 45, 46);
+  background-color: transparent;
   padding: 2rem 10%;
   /* transition: 0.3s; */
   /* z-index: 2; */
@@ -233,4 +233,7 @@ p {
 }
 .below p {
   text-align: center;
+}
+@media screen {
+  
 }
