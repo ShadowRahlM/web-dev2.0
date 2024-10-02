@@ -1,0 +1,56 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 80px;
+}
+header h1 {
+    color: #f7b05c;
+    font-style: italic;
+    font-size: 60px;
+}
+#color-blue{
+    color: #141366;
+}
+#display-block{
+    display: block;
+}
+body{
+    padding:60px
+
+}
+section{
+    display:flex;
+}
+section h1{
+    font-size:30px;
+}
+
+.imagey{
+    display: flex;
+    /* justify-content: center; */
+    padding: 50px;
+    flex: 1 50px;
+}
+.click{
+    padding: 5px 43px;
+}
+
+p{
+    /* flex-flow: row wrap; */
+    margin: 5px 8px;
+    padding: 20px 40px;
+}
+#desgin{
+    display:flex;
+    justify-content: flex-end;
+
+}

@@ -1,0 +1,75 @@
+:root {
+  width: 1080;
+}
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: flex;
+  justify-content: center;
+}
+#Hd h1 {
+  font-size: 150px;
+}
+
+.g {
+  color: #4285f4;
+}
+
+.o {
+  color: #ea4335;
+}
+
+.o2 {
+  color: #fbbc05;
+}
+
+.g2 {
+  color: #4285f4;
+}
+
+.l {
+  color: #34a853;
+}
+
+.e {
+  color: #ea4335;
+}
+
+.lean + .racks{
+  display: flex;
+}
+.google {
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+}
+
+.racks .coupe .watch {
+  display: flex;
+  margin-left: 50px;
+  justify-content: center;
+  flex: 2 20px;
+  cursor: pointer;
+}
+.lean .google .main {
+  display: flex;
+  width: 45%;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+ .lean .google .icons{
+  position: absolute;
+    display: flex;
+    pointer-events: none;
+    padding: 12px 20px;
+    justify-content: space-between;
+    align-items: center;
+    top: 1;
+
+}
