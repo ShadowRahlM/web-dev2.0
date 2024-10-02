@@ -1,10 +1,11 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 :root {
   font-family: "Poppins", sans-serif;
 }
@@ -12,45 +13,88 @@
 h1 {
   font-size: 80px;
 }
+main h1 {
+  text-align: center;
+}
+
 header h1 {
-    color: #f7b05c;
-    font-style: italic;
-    font-size: 60px;
+  color: #f7b05c;
+  font-style: italic;
+  font-size: 60px;
 }
-#color-blue{
-    color: #141366;
+
+#color-blue {
+  color: #141366;
 }
-#display-block{
+
+#display-block {
+  display: block;
+}
+
+body {
+  padding: 60px;
+}
+
+section {
+  display: flex;
+  /* flex-flow: row wrap; */
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+section h1 {
+  font-size: 30px;
+}
+
+.imagey {
+  justify-content: center;
+  padding: 50px;
+  flex: 0 2rem;
+}
+/* #construct{ */
+/* width: 400px; */
+/* } */
+
+.click {
+  padding: 5px 43px;
+}
+
+p {
+  /* flex-flow: row wrap; */
+  margin: 5px 8px;
+  padding: 20px 40px;
+}
+
+#desgin {
+  display: flex;
+  justify-content: flex-end;
+}
+/* mobile designs */
+@media (min-width: 320px) and (max-width: 480px) {
+  html {
+    /* width: 480px; */
+    margin: auto;
+    /* display: block; */
+  }
+  body {
+    background-color: bisque;
     display: block;
-}
-body{
-    padding:60px
-
-}
-section{
-    display:flex;
-}
-section h1{
-    font-size:30px;
-}
-
-.imagey{
+  }
+  main h1 {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+  }
+  .imagey {
+    /* display: block; */
+    margin: auto;
+    padding: auto;
+  }
+  section {
     display: flex;
-    /* justify-content: center; */
-    padding: 50px;
-    flex: 1 50px;
-}
-.click{
-    padding: 5px 43px;
-}
-
-p{
-    /* flex-flow: row wrap; */
-    margin: 5px 8px;
-    padding: 20px 40px;
-}
-#desgin{
-    display:flex;
-    justify-content: flex-end;
-
+    flex-direction: column;
+  }
+  .imagey p{
+    font-size: 20px;
+  }
 }

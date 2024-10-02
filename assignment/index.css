@@ -8,7 +8,7 @@
   --big-font: 3rem;
   margin: 0;
   padding: 0;
-  --text-color: #006e7f;
+  --text-color: #7e898b;
   --second-color: #393647;
   --main-color: #f8cb2e;
   --main-color-two: #f75023;
@@ -29,8 +29,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
-  padding: 2rem 10%;
+  background-color: var(--text-color);
+  padding: 0.2em;;
   /* transition: 0.3s; */
   /* z-index: 2; */
   border-top-left-radius: 15px;
@@ -59,7 +59,7 @@ nav ul li {
 }
 nav ul li a {
   display: inline;
-  margin: 20px;
+  margin: 2rem;
   color: #006e7f;
   text-decoration: none;
   a:hover {
@@ -71,6 +71,9 @@ nav ul li a {
   justify-content: space-between;
   gap: 50px;
   margin: 80px auto;
+}
+#me {
+  justify-content: flex-end;
 }
 .desgin {
   /* display:block; */
@@ -213,27 +216,106 @@ p {
   color: var(--second-color);
   line-height: 1.8rem;
 }
-.contacting{
+.contacting {
   display: inline-block;
   text-align: center;
-  margin:  auto 35rem;
-
+  margin: auto 35rem;
 }
-.contacting h2{
+.contacting h2 {
   font-size: 1.3rem;
   font-weight: 500;
 }
-.contacting btn{
-  margin:auto 2rem;
+.contacting btn {
+  margin: auto 2rem;
   text-align: center;
 }
-.contacting .anchor{
+.contacting .anchor {
   margin: 2rem 8em;
   padding: 4rem;
 }
 .below p {
   text-align: center;
 }
-@media screen {
-  
+/* mobile devices  */
+@media (min-width: 320px) and (max-width: 480px) {
+  body {
+    background-color: #04363d;
+  }
+  header {
+    /* position: sticky; */
+    /* top: 0; */
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.6rem;
+    background-color: transparent;
+  }
+  nav {
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0.1rem;
+    padding: 0.1rem;
+    width: 3rem;
+    align-items: start;
+    justify-content: start;
+    
+
+  }
+  nav ul li a {
+  display: inline;
+  margin:0;
+  color: #006e7f;
+  text-decoration: none;
+
+  }
+  nav ul{
+    /* justify-content: start; */
+    margin: 0;
+  }
+  nav ul li{
+    text-align: left;
+    margin:0;
+    margin-right: 0.1rem;
+    justify-content: flex-start;
+  }
+  .desgin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .desgin #me{
+    /* width:auto; */
+    flex-shrink: 1 1 200px;
+  }
+  .about_me{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #projects{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .contacting{
+    display: inline-block;
+    text-align: left;
+  }
+  .contacting h2 div p button{
+    /* display: inline-block; */
+    /* flex-direction: column; */
+    text-align:start
+  }
+  .image{
+    display: flex;
+    width:450x;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    outline: none;
+    border: none;
+    border-radius: 0;
+  }
 }
