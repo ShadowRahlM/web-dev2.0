@@ -4,33 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mugabi Edwin</title>
-    <link rel="shortcut icon" href="images/code.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+      rel='stylesheet'>
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="images/code.png" type="image/x-icon ">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="index.css" />
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="index.css" /> -->
   </head>
   <body>
-    <header>
-      <h1 class="head-logo">M|E</h1>
+    <header
+      class="flex sticky top-0 bg-slate-800 justify-around m-4 text-amber-300 rounded-r  rounded-l p-1.5">
+      <h1 class="p-1.5 m-4">M|E</h1>
       <nav>
-        <ul>
-          <li><a href="#Home">Home</a></li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class=" flex text-slate-700 p-1.5 ">
+          <li class="p-1.5 m-4 "><a
+              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+              href="#Home">Home</a></li>
+          <li class="p-1.5 m-4"><a
+              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+              href="#About">About</a></li>
+          <li class="p-1.5 m-4"><a
+              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+              href="#projects">Projects</a></li>
+          <li class="p-1.5 m-4"><a
+              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+              href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <main id="Home" class="main">
-      <section class="start">
+    <main class="main">
+      <section class="flex justify-around m-12 p-0.2 gap-2" class="start">
         <div class="desgin">
-          <h3>Hello,I'm</h3>
-          <h1>Mugabi Edwin</h1>
-          <h5>A Web Developer <span class="change-color">From Uganda</span></h5>
+          <h3 class="text-5xl text-blue-200">Hello,I'm</h3>
+          <h1 class="text-2xl text-green-200">Mugabi Edwin</h1>
+          <h5 class="text-3xl">A Web Developer <span class="text-blue-300 change-color">From Uganda</span></h5>
           <p>
             I'm python system developer venturing into <br />
             web technologies and I'm eager to see where my curiosty takes me
@@ -38,40 +51,33 @@
             i really hope to ripe the fruits of my effort and i for one give it
             my all when am learning something exiciting .
           </p>
-
-          <a href="https://www.github.com/shadowrahlm"
-            ><img src="images/github (1).png" alt="my github"
-          /></a>
-          <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"
-            ><img src="images/linkedin (1).png" alt="my linkedin"
-          /></a>
-          <a href="https://www.instagram.com/maclarenbankz"
-            ><img src="images/instagram (1).png" alt="my instagram"
-          /></a>
-          <a href="tel:256765642975"
-            ><img src="images/whatsapp (1).png" alt="my whatsapp"
-          /></a>
-          <button class="btn">
-            <a id="Home" href="#">about me</a>
-          </button>
+          <a href="https://www.github.com/shadowrahlm"><i
+              class='bx bxl-github'></i></a>
+          <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"><i
+              class='bx bxl-linkedin' style='color:cadetblue'></i></a>
+          <a href="https://www.instagram.com/maclarenbankz"><i
+              class='bx bxl-instagram' style='color:cadetblue'></i></a>
+          <a href="tel:256765642975"><i class='bx bxl-whatsapp'
+              style='color:cadetblue'></i></a>
+          <button class="btn btn-warning block">
+            <a  id="Home" href="#">About me</a></button>
+          
         </div>
 
         <img id="me"
           class="image"
-          src="images/IMG_2560.JPEG"
-          alt="my landscape image"
-        />
+          src="images/image.png"
+          alt="my landscape image" />
       </section>
 
       <section class="about">
-        <div class="about_me">
+        <div class="flex m-2 p-1.5 justify-evenly gap-4" class="about_me">
           <img
             class="image-container"
             src="https://riseapps.co/wp-content/uploads/2019/09/abstract07.png.webp"
-            alt="laptop with code on screen"
-          />
+            alt="laptop with code on screen" />
           <div id="About" class="direct">
-            <h3>I'm a Developer</h3>
+            <h3 class="text-2xl">I'm a Developer</h3>
             <h1>
               Designing and <br />
               Developing according to the user <br />
@@ -87,25 +93,30 @@
               by collaborating with you <br />
               through dicussions and everything <br />
               in between.
+              <button class="btn btn-warning block"><a href="#contact">contact</a></button>
             </p>
-            <button class="btn">
-              <a href="#contact">contact me</a>
-            </button>
+
           </div>
         </div>
       </section>
-      <div class="heading">
-        <h3>portifilo</h3>
-        <h2>Behold the work of thy hands</h2>
-        <p>some of my projects</p>
-      </div>
+      <section class="flex justify-center m-8">
+        <div>
+          <h3>portifilo</h3>
+          <h2>Behold the work of thy hands</h2>
+          <p>some of my projects</p>
+        </div>
+      </section>
 
-      <section id="projects">
-        <div class="project-tile">
-          <img src="images/wakanda.png" alt="my first project under kanzu code" />
+      <section class="flex flex-wrap justify-center m-6" id="projects">
+
+        <div
+          class="border-solid border-2 border-sky-500 flex-wrapborder-solid border-2 border-sky-500   gap-0.5 m-1  rounded-xl p-3 project-tile">
+          <img src="images/wakanda.png"
+            alt="my first project under kanzu code" />
           <h3>Movie site project</h3>
           <p>
-            this was my first project since i joined kanzu code foundation,<br />
+            this was my first project since i joined kanzu code
+            foundation,<br />
             while developing this project the eagerness to horn my skills <br />
             even further kicked in.through this project i learned a great deal
             <br />
@@ -114,7 +125,8 @@
             insatiable and learing never stops
           </p>
         </div>
-        <div class="project-tile">
+        <div
+          class="border-solid border-2 border-sky-500  gap-0.5  m-1 rounded-xl p-3 project-tile">
           <img src="images/dev.png" alt="design and development site image" />
           <h3>Development and desgin project</h3>
           <p>
@@ -126,7 +138,8 @@
             helped a great deal and he has my gratitude
           </p>
         </div>
-        <div class="project-tile">
+        <div
+          class="border-solid border-2 border-sky-500   gap-0.5 m-1 rounded-xl p-3 project-tile">
           <img src="images/flex.png" alt="the flexbox_model concept" />
           <h3>personal project</h3>
           <p>
@@ -145,37 +158,35 @@
           </p>
         </div>
       </section>
-      <section id="contact" class="contacting">
-        <h2>Reach out to me</h2>
+      <section id="contact" class=" flex justify-evenly m-4 contacting">
+
         <div>
+          <h2 class="text-xl text-yellow-300">Reach out to me</h2>
           <p>
             Am always looking forward to new opportunities in my learning curve
             with technology,<br />
             my inbox is always open, <br />
             To opportunies or inquries.
-            <div class="">
-              <a href="https://github.com/ShadowRahlM"
-              ><img src="images/github (1).png" alt="my github"
-            /></a>
-            <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"
-              ><img src="images/linkedin (1).png" alt="my linkedin"
-            /></a>
-            <a href="https://www.instagram.com/maclarenbankz/"
-              ><img src="images/instagram (1).png" alt="my instagram"
-            /></a>
-            <a href="tel:256765642975"
-              ><img src="images/whatsapp (1).png" alt="my whatsapp"
-            /></a>
-            <button class="btn">
-              <a  href="mailto:maclarenbankz@gmail.com">EMail me</a>
-            </button>
-          </p>
-        </div>
-      </section>
-    </main>
-    <footer class="below">
-      <hr>
-      <p>created by Mugabi Edwin &copy;2024</p>
-    </footer>
-  </body>
-</html>
+            <div class>
+              <a href="https://github.com/ShadowRahlM"><i class='bx bxl-github'
+                  style='color:rgb(6, 71, 71)'></i></a>
+              <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"><i
+                  class='bx bxl-linkedin-square'
+                  style='color:rgb(6, 71, 71)'></i></a>
+              <a href="https://www.instagram.com/maclarenbankz/"><i
+                  class='bx bxl-instagram' style='color:rgb(6, 71, 71)'></i></a>
+              <a href="tel:256765642975"><i class='bx bxl-whatsapp'
+                  style='color:rgb(6, 71, 71)'></i></a>
+
+                  <button class="btn btn-warning block"><a
+                  href="mailto:maclarenbankz@gmail.com">Email me</a></button>
+            </p>
+          </div>
+        </section>
+      </main>
+      <footer class="text-center below">
+        <hr>
+        <p>created by Mugabi Edwin &copy;2024</p>
+      </footer>
+    </body>
+  </html>
