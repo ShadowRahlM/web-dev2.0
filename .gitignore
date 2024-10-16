@@ -2,3 +2,9 @@ node_modules
 
 # Local Netlify folder
 .netlify
+#vscode files 
+.vscode
+
+package-lock.json
+package.json
+README.md
