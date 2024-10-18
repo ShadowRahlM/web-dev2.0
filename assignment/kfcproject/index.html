@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bg-white m-1" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wgnone;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,9none;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn.tictuk.com/96309cfa-802c-f2cd-e79e-71062fea6db5/assets/logoDesktopHeader.svg"
+      type="image/x-icon"
+    />
     <title>KFC</title>
 
     <link
@@ -10,7 +27,674 @@
       rel="stylesheet"
       type="text/css"
     />
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body></body>
+  <body class="font-family:{ 'Barlow':['Barlow', 'serif']}">
+    <header class="flex sticky top-0 justify-space p-4 bg-white m-1 m-4">
+      <h1>
+        <img
+          class="m-3"
+          src="	https://cdn.tictuk.com/96309cfa-802c-f2cd-e79e-71062fea6db5/assets/logoDesktopHeader.svg"
+          alt="logo"
+        />
+      </h1>
+      <nav class="navigation-bar">
+        <ul class="flex font-bold text-2xl text-black m">
+          <li class="p-1.5 -4 hover:text-base">
+            <a href="#">HOME</a>
+          </li>
+          <li class="p-1.5 -4 hover:text-base">
+            <a href="#our menu">OUR MENU</a>
+          </li>
+          <li class="p-1.5 -4 hover:text-base"><a href="#us">ABOUT US </a></li>
+          <li class="p-1.5 -4 hover:text-base">
+            <a href="#contact">CONTACT US</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-tile flex-col md:flex-col:bg-orange-200">
+      <div
+        class="flex font-italic text-xl text-black justify-center -6 py-2 px-1"
+      >
+        <h1 class="text-5xl text-slate-600">Edwin's KFC resturant</h1>
+      </div>
+      <p class="text-center text-slate-600 text-3xl -8 m-5">
+        “Welcome To Edwin's Fastfood Resturant,<br />
+        where we serve delicious fastfoods in a cozy atmosphere.”
+      </p>
+      <section class="flex -4 justify-around">
+        <div>
+          <h1 class="text-black font-bold text-3xl my-3">
+            How would you like to order today?
+          </h1>
+          <p class="text-2xl font-bold text-black m-3">
+            Delivery & Pick up now available
+          </p>
+        </div>
+        <div>
+          <button class="btn btn-wide -4 bg-red-600 text-white text-l">
+            Delivery at your doorstep
+          </button>
+          <p class="-4 font-bold text-black">
+            Enter your ad or click on the icon to use your current location
+          </p>
+        </div>
+        <div>
+          <label
+            class="input input-bordered flex items-center gap-2 bg-white relative left-5"
+          >
+            <box-icon name="current-location"></box-icon>
+            <input type="text" class="grow" placeholder="Search" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="h-4 w-4 opacity-70"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </label>
+        </div>
+      </section>
+      <section>
+        <div>
+          <img
+            src="https://cdn.tictuk.com/96309cfa-802c-f2cd-e79e-71062fea6db5/banner_desktop_2617180b-a127-c637-5d5f-4e5d2e7cae39.jpeg?a=bd47112f-64fa-a245-5124-79ac57855555"
+            alt="cusine menu"
+          />
+        </div>
+      </section>
+      <section>
+        <div class="flex justify-center m-5">
+          <div
+            class="divider divider-start text-3xl text-black -5 p-5 font-bold"
+          >
+            Limited Time <br />
+            Offers
+          </div>
+          <div class="card bg-none w-96 shadow-xl m-4">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/de1c1a64-1e92-0bf5-0d0e-5e8995b421f9.jpeg?a=29e1b9e3-6315-d6c1-59b4-b08b217b2f44"
+                alt="chicken lunchbox"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title"></h2>
+              <p class="font-bold text-2xl text-black">chicken lunchbox</p>
+              <span>USh25000.00</span>
+              <div class="card-actions">
+                <button class="btn btn-primary bg-red-600">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-white m-1 w-96 shadow-xl m-4">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/4511c89a-630c-006e-31d8-c7a7c502a897.jpeg?a=fa099adb-98ac-8eee-05f1-450741f181c3"
+                alt="fully loaded box"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title"></h2>
+              <p class="font-bold text-2xl text-black">fully loaded box</p>
+              <span>USh36000.00</span>
+              <div class="card-actions">
+                <button class="btn btn-primary bg-red-600">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-white m-1 w-96 shadow-xl m-4">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/85936a9c-2f75-a347-f948-69bf70778e9c.jpeg?a=e2659955-0645-40a6-64b0-709770f6d5e5"
+                alt="zinger twister meal"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title"></h2>
+              <p class="font-bold text-2xl text-black">zinger twister meal</p>
+              <span>USh25000.00</span>
+              <div class="card-actions">
+                <button class="btn btn-primary bg-red-600">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card m-1 bg-white m-1 w-96 shadow-xl m-4">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/efac5fff-9ae7-9213-3326-e7c38cec4665.jpeg?a=603f3748-7861-1603-e6d3-de8c5acf3590"
+                alt="wingman"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title"></h2>
+              <p class="font-bold text-2xl text-black">wingman</p>
+              <span>USh18000.00</span>
+              <div class="card-actions">
+                <button class="btn btn-primary bg-red-600">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div></div>
+      </section>
+      <section></section>
+    </main>
+    <section id="our menu">
+      <h1 class="text-center text-2xl font-bold text-black">OUR DELUXE MENU</h1>
+      <div class="flex justify-evenly m-5 p-4 bg-none text-xl text-black">
+        <div role="tablist" class="tabs tabs-lifted">
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="BOX MEALS"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-none border-none m-4nded-box p-6"
+          >
+            <div class="card bg-white m-1 -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/de1c1a64-1e92-0bf5-0d0e-5e8995b421f9.jpeg?a=29e1b9e3-6315-d6c1-59b4-b08b217b2f44"
+                    alt="chicken lunchbox"
+                  />
+                </figure>
+                <p>chicken lucnhbox</p>
+                <span>USh25000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/5b5c22e7-6208-cc3c-3159-9cf7a12cc83d.jpeg?a=a3e37b32-0448-6163-f17d-e3f141601b65"
+                    alt="wings lucnhbox"
+                  />
+                </figure>
+                <p>wings lucnhbox</p>
+                <span>USh25000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/4511c89a-630c-006e-31d8-c7a7c502a897.jpeg?a=fa099adb-98ac-8eee-05f1-450741f181c3"
+                    alt="full-loaded lunch box"
+                  />
+                </figure>
+                <p>full-loaded lunch box</p>
+                <span>USh36000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="CHICKEN PIECES"
+            checked="checked"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-none border-none m-4nded-box p-6"
+          >
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/368109f0-470b-82de-b1ac-db5ed5580977.jpeg?a=55b60299-4500-0b4e-4e2f-e5caa7a6dbc9"
+                    alt="21 pc bucket"
+                  />
+                </figure>
+                <h2 class="card-title"></h2>
+                <p>21 pc bucket</p>
+                <span>USh110000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/570ee113-35c3-d186-6120-37195190160e.jpeg?a=f495e608-c919-e7a0-b3de-3b329c911677"
+                    alt="18 pc bucket"
+                  />
+                </figure>
+                <p>18 pc bucket</p>
+                <span>USh98000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/bb9f8ff7-21ed-af0e-1018-321035a48bca.jpeg?a=43e59f68-f6c1-269d-073f-b0a8d7dd9e29"
+                    alt="15 pc buckets"
+                  />
+                </figure>
+                <p>15 pc bucket</p>
+                <span>USh85000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/8dee18df-998d-b94a-f19a-963b796adfe9.jpeg?a=7e64c939-f9ee-0590-8d89-9b53b39ae345"
+                    alt="12 pc bucket"
+                  />
+                </figure>
+                <p>12 pc bucket</p>
+                <span>USh69000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none -2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/685a3def-4783-acf8-75ec-2ee684a44c06.jpeg?a=4318258f-d557-5797-f419-f9da9624a06a"
+                    alt="9 pc bucket"
+                  />
+                </figure>
+                <p>9 pc bucket</p>
+                <span>USh55000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/51be9a3f-116e-a544-cdaf-5b00528bf1fe.jpeg?a=92d8b5fa-9da5-4bab-f5e9-d38cdf5a5928"
+                    alt="5 pc bucket"
+                  />
+                </figure>
+                <p>5 pc bucket</p>
+                <span>USh35000.00</span>
+              </div>
+            </div>
+          </div>
+
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="SHARING"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-none border-none m-4nded-box p-6"
+          >
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/22d62378-e5a7-6ada-2454-66d21cbbc03e.jpeg?a=d525f3a5-9a34-4eea-48f1-6339b1191704"
+                    alt="colonel bucket feast"
+                  />
+                </figure>
+                <p>colonel bucket feast</p>
+                <span>USh79500.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/c2b1831e-cc1f-de0f-d13e-336076d69069.jpeg?a=e95e87c7-994a-a6a9-d6eb-c719d6e219d2"
+                    alt="kentucy bucket"
+                  />
+                </figure>
+                <p>kentucy bucket</p>
+                <span>USh74500.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/042f5b17-55e9-1f9b-546e-37aa29861b91.jpeg?a=cbea5e50-6048-18c9-4fe3-83fb9190d56a"
+                    alt="hot wings buckets"
+                  />
+                </figure>
+                <p>hot wings bucket</p>
+                <span>USh60000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/4f8048c5-227e-c9d5-71d4-a41025e279fd.jpeg?a=98dee94d-e0b7-2387-8739-9d570323797d"
+                    alt="bargin bucket"
+                  />
+                </figure>
+                <p>bargin bucket</p>
+                <span>USh69000.00</span>
+              </div>
+            </div>
+          </div>
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="STREETWISE"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-none border-none m-4 rounded-box p-6"
+          >
+            <div class="card bg-none m-4 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/e2143e92-9981-68de-61d1-228346e11567.jpeg?a=05aca68c-cada-017a-4403-545a4a465efb"
+                    alt="streewise 7"
+                  />
+                </figure>
+                <p>streetwise</p>
+                <span>USh54500.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-4 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/46af47ed-91fe-7e96-cb59-ce37e219efce.jpeg?a=b837bf4f-5bcb-2257-838f-5a501e6f7f75"
+                    alt="streetwise 5 meal"
+                  />
+                </figure>
+                <p>streetwise 5 meal</p>
+                <span>USh43000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-4 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/60674833-85a9-12f8-b5f8-d66baf616b7c.jpeg?a=148d8a1b-45ae-f517-c4e0-d550bcad45b9"
+                    alt="streetwise 5"
+                  />
+                </figure>
+                <p>streetwise 5</p>
+                <span>USh40000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-4 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/9d5b7d99-9ba2-72da-12e1-34c07a3ed3de.jpeg?a=bbaad3fd-eded-2abf-e70a-5cf4bd8429bd"
+                    alt="streetwise 3"
+                  />
+                </figure>
+                <p>streetwise 3</p>
+                <span>USh24500.00</span>
+              </div>
+            </div>
+          </div>
+          <input
+            type="radio"
+            name="my_tabs_2"
+            role="tab"
+            class="tab"
+            aria-label="SOFTDRINKS"
+          />
+          <div
+            role="tabpanel"
+            class="tab-content bg-none border-none m-4 rounded-box p-6"
+          >
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/d8b49972-a0dc-1d1e-7480-fcf8ca3946f5.jpeg?a=9bec8d6d-1377-870d-e854-b385aac6f236"
+                    alt="2lt soft "
+                  />
+                </figure>
+                <p>2LT soft</p>
+                <span>USh8000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/fb13e4ea-d337-57e9-6970-795e3d0ee4b5.jpeg?a=d025ccc7-17dd-5d57-cf54-8111f32446c5"
+                    alt="500ml soft "
+                  />
+                </figure>
+                <p>500ML soft</p>
+                <span>USh4000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/52dc3cd8-7930-72fd-ea4c-d5148e043c4b.jpeg?a=3012ff92-f6ba-15eb-a6e4-c8d038c14fb8"
+                    alt="330ml soft "
+                  />
+                </figure>
+                <p>330ML soft</p>
+                <span>USh3000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/6dae257c-f6d6-8d01-d85d-a1e1eb15319b.jpeg?a=9cf83920-c5af-75a4-8339-adfffa41b9da"
+                    alt="400ml minute maid"
+                  />
+                </figure>
+                <p>400ML minute maid</p>
+                <span>USh5000.00</span>
+              </div>
+            </div>
+            <div class="card bg-none m-2 w-96 shadow-xl">
+              <div class="card-body">
+                <h2 class="card-title"></h2>
+                <figure>
+                  <img
+                    src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/5968324b-23f6-873f-0b5e-ec0664f23c6e.jpeg?a=95c7379f-7331-c2ab-e548-27cda8b1e95b"
+                    alt="500ml rwenzori water"
+                  />
+                </figure>
+                <p>500ML rwenzori water</p>
+                <span>USh3000.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center text-2xl font-bold text-black">
+        <p>OUR TOP FIVE FOODS</p>
+      </div>
+      <div class="flex my-4 text-xl text-black">
+        <div class="card bg-none m-3 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <figure>
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/368109f0-470b-82de-b1ac-db5ed5580977.jpeg?a=55b60299-4500-0b4e-4e2f-e5caa7a6dbc9"
+                alt="thee kfc bucket"
+              />
+            </figure>
+            <p>
+              our top and esteemed dish <br />
+              people travel from far <br />and beyond to taste this <br />
+              amazing delicacy
+            </p>
+          </div>
+        </div>
+        <div class="card bg-none m-3 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <figure>
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/51be9a3f-116e-a544-cdaf-5b00528bf1fe.jpeg?a=92d8b5fa-9da5-4bab-f5e9-d38cdf5a5928"
+                alt="drum sticks"
+              />
+            </figure>
+            <p>
+              Do u love drumsticks of course you do <br />who doesn't really
+              <br />
+              so come to <br />Edwin's kcf and we will <br />serve you the best
+              <br />drumsticks from the franchise
+            </p>
+          </div>
+        </div>
+        <div class="card bg-none m-3 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <figure>
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/60674833-85a9-12f8-b5f8-d66baf616b7c.jpeg?a=148d8a1b-45ae-f517-c4e0-d550bcad45b9"
+                alt="streetwise 5"
+              />
+            </figure>
+            <p>
+              Ever tried our streetwise fries and chicken <br />this combo packs
+              a flavor <br />unrivaled in the industry <br />
+              so grab yo self a bite <br />of this delightful treat
+            </p>
+          </div>
+        </div>
+        <div class="card bg-none m-3 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <figure>
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/add1298e-dc2e-6fa9-72fd-9e3e981540a0.jpeg?a=f4e45d83-3038-75bf-e9fe-6d64dbc55f7f"
+                alt="zinger burger"
+              />
+            </figure>
+            <p>
+              Originally from the west <br />this exotic taste of western
+              culture <br />has certainly made a name on our <br />menu come try
+              this and we <br />promise you won't regret your <br />decision
+            </p>
+          </div>
+        </div>
+        <div class="card bg-none m-3 w-96 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title"></h2>
+            <figure>
+              <img
+                src="https://cdn.tictuk.com/bab44093-cdab-c7f4-1d25-2c508f70446b/c2b1831e-cc1f-de0f-d13e-336076d69069.jpeg?a=e95e87c7-994a-a6a9-d6eb-c719d6e219d2"
+                alt="the bucket soft drink pair"
+              />
+            </figure>
+            <p>
+              Imagine tasting the crispy tendness of premium chicken <br />
+              with a refreshing taste of cola <br />
+              well am glad to tell you <br />imagination has been made
+              <br />reality at Edwin's KFC
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <section>
+        <footer
+          class="footer footer-center bg-base-200 text-base-content rounded p-10 md:max-sm"
+        >
+          <nav class="grid grid-flow-col gap-4">
+            <a id="us" class="link link-hover">About us</a>
+            <a id="contact" class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <div class="grid grid-flow-col gap-4">
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                  ></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                  ></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+          <aside>
+            <p>Copyright ©2024 - All right reserved by Mugabi Edwin Ltd</p>
+          </aside>
+        </footer>
+      </section>
+    </footer>
+  </body>
 </html>
