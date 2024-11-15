@@ -18,85 +18,99 @@
     <!-- <link rel="stylesheet" href="index.css" /> -->
   </head>
   <body>
-    <header
-      class="flex sticky top-0 bg-slate-800 justify-around m-4 text-amber-300 rounded-r  rounded-l p-1.5">
-      <h1 class="p-1.5 m-4">M|E</h1>
-      <nav>
-        <ul class=" flex text-slate-700 p-1.5 ">
-          <li class="p-1.5 m-4 "><a
-              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
-              href="#Home">Home</a></li>
-          <li class="p-1.5 m-4"><a
-              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
-              href="#About">About</a></li>
-          <li class="p-1.5 m-4"><a
-              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
-              href="#projects">Projects</a></li>
-          <li class="p-1.5 m-4"><a
-              class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
-              href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <header class="sticky top-0 ">
+      <div class="p-1.5 m-4 flex bg-slate-800 justify-around m-4 text-amber-300 rounded-r  rounded-l p-1.5  navbar bg-base-100">
+        <h1 class="p-1.5 m-4 top-0 bg-slate-800 justify-around m-4 text-amber-300 rounded-r">M|E</h1>
+        <nav>
+          <ul class=" flex justify-center text-slate-700 p-1.5 ">
+            <li class="p-1.5 m-4 "><a
+                class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+                href="#Home">Home</a></li>
+            <li class="p-1.5 m-4"><a
+                class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+                href="#About">About</a></li>
+            <li class="p-1.5 m-4"><a
+                class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+                href="#projects">Projects</a></li>
+            <li class="p-1.5 m-4"><a
+                class="bg--500 hover:bg-cyan-600 active:bg-cyan-700"
+                href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        </div>
+      
     </header>
     <main class="main">
       <section class="flex justify-around m-12 p-0.2 gap-2" class="start">
-        <div class="desgin">
-          <h3 class="text-5xl text-blue-200">Hello,I'm</h3>
-          <h1 class="text-2xl text-green-200">Mugabi Edwin</h1>
-          <h5 class="text-3xl text-green-100">A Web Developer <span class="text-blue-300 change-color">From Uganda</span></h5>
-          <p>
-            I'm python system developer venturing into <br />
-            web technologies and I'm eager to see where my curiosty takes me
-            <br />
-            i really hope to ripe the fruits of my effort and i for one give it
-            my all when am learning something exiciting .
-          </p>
-          <a href="https://www.github.com/shadowrahlm"><i
-              class='bx bxl-github'></i></a>
-          <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"><i
-              class='bx bxl-linkedin' style='color:cadetblue'></i></a>
-          <a href="https://www.instagram.com/maclarenbankz"><i
-              class='bx bxl-instagram' style='color:cadetblue'></i></a>
-          <a href="tel:256765642975"><i class='bx bxl-whatsapp'
-              style='color:cadetblue'></i></a>
-          <button class="btn btn-warning block">
-            <a  id="Home" href="#">About me</a></button>
-          
+        <div class="hero  min-h-screen">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <img
+              src="images/image.png" alt="my landscape image"
+              class="max-w-sm rounded-lg shadow-2xl" />
+            <div>
+              <div class="desgin">
+                <h3 class="text-5xl text-blue-200">Hello,I'm</h3>
+                <h1 class="text-2xl text-green-200">Mugabi Edwin</h1>
+                <h5 class="text-3xl text-green-100">A Web Developer <span class="text-blue-300 change-color">From Uganda</span></h5>
+                <p class="text-pretty">
+                  I'm python system developer venturing into <br />
+                  web technologies and I'm eager to see where my curiosty takes me
+                  <br />
+                  i really hope to ripe the fruits of my effort and i for one give it
+                  my all when am learning something exiciting .
+                </p>
+                <a href="https://www.github.com/shadowrahlm"><i
+                    class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"><i
+                    class='bx bxl-linkedin' style='color:cadetblue'></i></a>
+                <a href="https://www.instagram.com/maclarenbankz"><i
+                    class='bx bxl-instagram' style='color:cadetblue'></i></a>
+                <a href="tel:256765642975"><i class='bx bxl-whatsapp'
+                    style='color:cadetblue'></i></a>  
+              </div>
+      
+            
+              <button class="btn btn-warning block"><a  id="Home" href="#">About me</a></button></button>
+            </div>
+          </div>
         </div>
 
-        <img id="me"
-          class="image"
-          src="images/image.png"
-          alt="my landscape image" />
+        
       </section>
 
       <section class="about">
         <div class="flex m-2 p-1.5 justify-evenly gap-4" class="about_me">
-          <img
-            class="image-container"
-            src="https://riseapps.co/wp-content/uploads/2019/09/abstract07.png.webp"
-            alt="laptop with code on screen" />
-          <div id="About" class="direct">
-            <h3 class="text-2xl text-blue-300">I'm a Developer</h3>
-            <h1>
-              Designing and <br />
-              Developing according to the user <br />
-              specficiations nothing more nothing less
-            </h1>
-            <p>
-              I'm a python developer and very passionate <br />about the
-              language that one thing <br />lead to another fast forward one and
-              half years into web <br />
-              development, always eager to put my new skills to the <br />test
-              so to measure my strength entrust me with your projects <br />
-              and will i develop and desgin your project to success <br />
-              by collaborating with you <br />
-              through dicussions and everything <br />
-              in between.
-              <button class="btn btn-warning block"><a href="#contact">contact</a></button>
-            </p>
+   
+          <div class="hero  min-h-screen">
+            <div class="hero-content flex-col lg:flex-row">
+              <img
+              class="image-container"
+              src="https://riseapps.co/wp-content/uploads/2019/09/abstract07.png.webp"
+              alt="laptop with code on screen" />
+           
+         <div id="About" class="direct">
+          <h3 class="text-2xl text-blue-300">I'm a Developer</h3>
+          <h1>
+            Designing and <br />
+            Developing according to the user <br />
+            specficiations nothing more nothing less
+          </h1>
+          <p class="text-pretty">
+            I'm a python developer and very passionate <br />about the
+            language that one thing <br />lead to another fast forward one and
+            half years into web <br />
+            development, always eager to put my new skills to the <br />test
+            so to measure my strength entrust me with your projects <br />
+            and will i develop and desgin your project to success <br />
+            by collaborating with you <br />
+            through dicussions and everything <br />
+            in between.
+            <button class="btn btn-warning block"><a href="#contact">contact</a></button>
+          </p>
 
-          </div>
+        </div>
+            </div>
+          </div> 
         </div>
       </section>
       <section class="flex justify-center m-8">
