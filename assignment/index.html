@@ -9,10 +9,71 @@
     <link rel="shortcut icon" href="images/code.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body.dark-mode {
+        background-color: #181717; /* Dark brown background */
+        color: #f0f4f8; /* Light text color for contrast */
+      }
+      body.light-mode {
+        background-color: #ffffff; /* Light background */
+        color: #000000; /* Dark text color for contrast */
+      }
+      body.light-mode h1, body.light-mode h2, body.light-mode h3 {
+        color: #333333; /* Darker color for headings to reduce eye strain */
+      }
+      body.light-mode h5 {
+        color: #555555; /* Darker color for h5 to reduce eye strain */
+      }
+      header {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      nav a:hover {
+        background-color: #00bcd4;
+        color: white;
+      }
+      nav a:active {
+        background-color: #0097a7;
+      }
+      .btn {
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      .btn:hover {
+        background-color: #fb8c00;
+      }
+      .btn a {
+        color: white;
+        text-decoration: none;
+      }
+      .section-padding {
+        padding: 40px 20px;
+      }
+      footer {
+        padding: 20px;
+        background-color: #2d3748;
+        color: #f6e05e;
+      }
+      .toggle-btn {
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+      .toggle-btn:hover {
+        background-color: #fb8c00;
+      }
+    </style>
   </head>
-  <body>
+  <body class="dark-mode">
     <header class="sticky top-0 bg-slate-800 text-amber-300 p-4">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl">M|E</h1>
@@ -24,10 +85,13 @@
             <li><a class="hover:bg-cyan-600 active:bg-cyan-700 p-2 rounded" href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <button class="toggle-btn" onclick="toggleMode()">
+          <i id="toggle-icon" class='bx bx-moon'></i>
+        </button>
       </div>
     </header>
     <main class="main">
-      <section id="Home" class="flex flex-col lg:flex-row justify-around m-12 p-2 gap-4">
+      <section id="Home" class="flex flex-col lg:flex-row justify-around m-12 p-2 gap-4 section-padding">
         <div class="hero min-h-screen">
           <div class="hero-content flex-col lg:flex-row-reverse">
             <img src="images/image.png" alt="my landscape image" class="max-w-sm rounded-lg shadow-2xl" />
@@ -46,14 +110,14 @@
                   <a href="https://www.instagram.com/maclarenbankz"><i class='bx bxl-instagram' style='color:cadetblue'></i></a>
                   <a href="tel:256765642975"><i class='bx bxl-whatsapp' style='color:cadetblue'></i></a>
                 </div>
-                <button class="btn btn-warning mt-4"><a href="#About">About me</a></button>
+                <button class="btn mt-4"><a href="#About">About me</a></button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="about">
+      <section class="about section-padding">
         <div class="flex flex-col lg:flex-row justify-evenly m-2 p-4 gap-4">
           <div class="hero min-h-screen">
             <div class="hero-content flex-col lg:flex-row">
@@ -64,14 +128,14 @@
                 <p class="text-pretty">
                   I'm a python developer and very passionate about the language. One thing led to another, and fast forward one and a half years into web development, I'm always eager to put my new skills to the test. Entrust me with your projects, and I will develop and design your project to success by collaborating with you through discussions and everything in between.
                 </p>
-                <button class="btn btn-warning mt-4"><a href="#contact">Contact</a></button>
+                <button class="btn mt-4"><a href="#contact">Contact</a></button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="text-center m-8">
+      <section class="text-center m-8 section-padding">
         <div>
           <h3 class="text-4xl text-green-200">Portfolio</h3>
           <h2 class="text-2xl text-blue-200">Behold the work of thy hands</h2>
@@ -79,7 +143,7 @@
         </div>
       </section>
 
-      <section class="flex flex-wrap justify-center m-6" id="projects">
+      <section class="flex flex-wrap justify-center m-6 section-padding" id="projects">
         <div class="border-solid border-2 border-sky-500 gap-2 m-2 rounded-xl p-4 project-tile">
           <img src="images/wakanda.png" alt="my first project under kanzu code" />
           <h3>Movie site project</h3>
@@ -103,7 +167,7 @@
         </div>
       </section>
 
-      <section id="contact" class="flex flex-col items-center m-4">
+      <section id="contact" class="flex flex-col items-center m-4 section-padding">
         <div>
           <p>
             I'm always looking forward to new opportunities in my learning curve with technology. My inbox is always open to opportunities or inquiries.
@@ -114,7 +178,7 @@
             <a href="https://www.instagram.com/maclarenbankz/"><i class='bx bxl-instagram' style='color:rgb(6, 71, 71)'></i></a>
             <a href="tel:256765642975"><i class='bx bxl-whatsapp' style='color:rgb(6, 71, 71)'></i></a>
           </div>
-          <button class="btn btn-warning mt-4"><a href="mailto:maclarenbankz@gmail.com">Email me</a></button>
+          <button class="btn mt-4"><a href="mailto:maclarenbankz@gmail.com">Email me</a></button>
         </div>
       </section>
     </main>
@@ -124,6 +188,22 @@
     </footer>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      function toggleMode() {
+        const body = document.body;
+        const toggleIcon = document.getElementById('toggle-icon');
+        if (body.classList.contains('dark-mode')) {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          toggleIcon.classList.remove('bx-moon');
+          toggleIcon.classList.add('bx-sun');
+        } else {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          toggleIcon.classList.remove('bx-sun');
+          toggleIcon.classList.add('bx-moon');
+        }
+      }
     </script>
   </body>
 </html>
