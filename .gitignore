@@ -2,9 +2,36 @@ node_modules
 
 # Local Netlify folder
 .netlify
-#vscode files 
+
+# VSCode settings
 .vscode
 
+# Package files
 package-lock.json
 package.json
-README.md
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.swp
+
+# Compiled files
+*.class
+*.o
+*.so
+
+# Other unnecessary files
+*.zip
+*.tar.gz
+*.rar
+*.7z

@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "netlify-cli": "^17.36.4"
+  },
+  "dependencies": {
+    "react-icons": "^5.4.0"
   }
 }
