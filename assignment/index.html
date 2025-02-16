@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="images/code.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -85,6 +85,8 @@
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        background-color: var(--color-dark);
+        color: white;
       }
 
       h1, h2, h3, h4, h5, h6 {
@@ -95,12 +97,14 @@
 
       /* Modern Components */
       .card {
-        background: var(--color-light);
+        background: rgba(255, 255, 255, 0.05);
         border-radius: var(--radius-lg);
         padding: var(--space-6);
         box-shadow: var(--shadow-md);
         transition: transform var(--transition-normal), 
                   box-shadow var(--transition-normal);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
       }
 
       .card:hover {
@@ -123,38 +127,103 @@
       }
 
       .button:hover {
-        background: var(--color-primary-dark);
         transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
 
-      .button--secondary {
-        background: var(--color-secondary);
-      }
-
-      .button--accent {
-        background: var(--color-accent);
-      }
-
-      /* Modern Layout Utilities */
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 var(--space-4);
-      }
-
-      .grid {
+      /* Skill Cards */
+      .skills-grid {
         display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: var(--space-6);
+        padding: var(--space-6);
       }
 
-      .flex {
-        display: flex;
-        gap: var(--space-4);
+      .skill-item {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s ease;
       }
 
-      /* Modern Animations */
-      @keyframes fadeUp {
+      .skill-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-item i {
+        font-size: 2.5rem;
+        color: var(--color-accent);
+        margin-bottom: var(--space-4);
+      }
+
+      .skill-progress {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-full);
+        height: 6px;
+        margin-top: var(--space-4);
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: var(--color-accent);
+        border-radius: var(--radius-full);
+        transition: width 1s ease-in-out;
+      }
+
+      /* Statistics Section */
+      .statistics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-8);
+        text-align: center;
+        padding: var(--space-12) var(--space-6);
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.05);
+        padding: var(--space-6);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-number {
+        font-size: var(--font-size-4xl);
+        font-weight: 700;
+        color: var(--color-accent);
+        margin-bottom: var(--space-2);
+      }
+
+      /* Skills Section and Following Content */
+      .section-padding {
+        padding: var(--space-12) var(--space-6);
+      }
+
+      .skills-section + section {
+        margin-top: var(--space-16);
+      }
+
+      .post-skills-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--space-8) var(--space-6);
+      }
+
+      .post-skills-content p {
+        margin-bottom: var(--space-6);
+        line-height: 1.8;
+        font-size: var(--font-size-lg);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .post-skills-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
         from {
           opacity: 0;
           transform: translateY(20px);
@@ -165,168 +234,113 @@
         }
       }
 
-      .animate-fade-up {
-        animation: fadeUp var(--transition-normal) forwards;
+      .fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
       }
 
-      /* Glass Morphism Effects */
-      .glass {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .glass-dark {
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      /* Modern Navigation */
-      .nav-link {
-        position: relative;
-        padding: var(--space-2) var(--space-4);
-        color: inherit;
-        text-decoration: none;
-        transition: color var(--transition-normal);
-      }
-
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--color-primary);
-        transition: width var(--transition-normal);
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      /* Modern Skill Cards */
-      .skill-card {
-        position: relative;
-        padding: var(--space-6);
-        border-radius: var(--radius-lg);
-        background: linear-gradient(135deg, 
-          rgba(var(--color-primary-rgb), 0.1),
-          rgba(var(--color-secondary-rgb), 0.1)
-        );
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        overflow: hidden;
-      }
-
-      .skill-card::before {
-        content: '';
-        position: absolute;
+      /* Loader */
+      .loader {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg,
-          transparent 0%,
-          rgba(255, 255, 255, 0.1) 50%,
-          transparent 100%
-        );
-        transform: translateX(-100%);
-        transition: transform var(--transition-slow);
+        background: var(--color-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.5s ease-out;
       }
 
-      .skill-card:hover::before {
-        transform: translateX(100%);
+      .loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
       }
 
-      /* Modern Project Cards */
-      .project-card {
-        position: relative;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        border-top-color: var(--color-accent);
+        animation: spin 1s linear infinite;
       }
 
-      .project-card__image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        transition: transform var(--transition-normal);
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
       }
 
-      .project-card:hover .project-card__image {
-        transform: scale(1.05);
-      }
-
-      .project-card__content {
-        position: absolute;
-        bottom: 0;
+      /* Scroll Progress */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
-        padding: var(--space-6);
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.9),
-          transparent
-        );
-        transform: translateY(100%);
-        transition: transform var(--transition-normal);
+        width: 100%;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 1000;
       }
 
-      .project-card:hover .project-card__content {
+      .scroll-progress::after {
+        content: '';
+        display: block;
+        height: 100%;
+        background: var(--color-accent);
+        width: 0;
+        transition: width 0.1s;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--color-accent);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: translateY(20px);
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
         transform: translateY(0);
       }
 
-      /* Modern Form Styles */
+      /* Form Styles */
+      .contact-form {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
       .form-group {
         margin-bottom: var(--space-4);
       }
 
-      .input {
+      .form-control {
         width: 100%;
         padding: var(--space-3);
-        border: 2px solid transparent;
-        border-radius: var(--radius-md);
-        background: var(--color-light);
-        transition: all var(--transition-normal);
-      }
-
-      .input:focus {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
-        outline: none;
-      }
-
-      /* Dark Mode Enhancements */
-      .dark-mode {
-        --color-bg: var(--color-dark);
-        --color-text: var(--color-light);
-        background-color: var(--color-bg);
-        color: var(--color-text);
-      }
-
-      .dark-mode .card {
         background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-md);
+        color: white;
+        transition: border-color 0.3s;
       }
 
-      .dark-mode .input {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--color-text);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        :root {
-          --space-12: 2rem;
-          --space-16: 3rem;
-        }
-
-        .container {
-          padding: 0 var(--space-4);
-        }
-
-        .grid {
-          grid-template-columns: 1fr;
-        }
+      .form-control:focus {
+        outline: none;
+        border-color: var(--color-accent);
       }
 
       /* Print Styles */
@@ -334,25 +348,148 @@
         .no-print {
           display: none !important;
         }
+      }
 
-        body {
-          background: white !important;
-          color: black !important;
-        }
+      /* Certification and Testimonial Cards */
+      .cert-grid, .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-8);
+        padding: var(--space-8) var(--space-6);
+      }
 
-        .container {
-          max-width: none;
-          padding: 0;
-        }
+      .cert-card {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+        border-radius: var(--radius-lg);
+        padding: var(--space-6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all var(--transition-normal);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cert-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: translateX(-100%);
+        transition: transform var(--transition-slow);
+      }
+
+      .cert-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .cert-card:hover::before {
+        transform: translateX(100%);
+      }
+
+      .cert-card__header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .cert-card__icon {
+        font-size: 2rem;
+        color: var(--color-accent);
+      }
+
+      .cert-card__title {
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        color: var(--color-accent);
+      }
+
+      .cert-card__issuer {
+        font-size: var(--font-size-sm);
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: var(--space-2);
+      }
+
+      .cert-card__date {
+        font-size: var(--font-size-sm);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        border-radius: var(--radius-lg);
+        padding: var(--space-8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all var(--transition-normal);
+        position: relative;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .testimonial-card__quote {
+        font-size: var(--font-size-lg);
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: var(--space-6);
+        position: relative;
+        padding-left: var(--space-8);
+      }
+
+      .testimonial-card__quote::before {
+        content: '"';
+        position: absolute;
+        left: 0;
+        top: -10px;
+        font-size: 4rem;
+        color: var(--color-accent);
+        opacity: 0.5;
+        font-family: serif;
+      }
+
+      .testimonial-card__author {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+      }
+
+      .testimonial-card__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: white;
+      }
+
+      .testimonial-card__info {
+        flex: 1;
+      }
+
+      .testimonial-card__name {
+        font-weight: 600;
+        color: var(--color-accent);
+      }
+
+      .testimonial-card__role {
+        font-size: var(--font-size-sm);
+        color: rgba(255, 255, 255, 0.7);
       }
     </style>
   </head>
   <body class="dark-mode">
     <!-- Skip navigation -->
-    <a href="#main" class="skip-nav">Skip to main content</a>
+    <a href="#main" class="skip-nav sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">Skip to main content</a>
     
     <!-- Loading indicator -->
-    <div class="loader" aria-hidden="true">
+    <div class="loader" aria-hidden="true" role="progressbar">
       <div class="spinner"></div>
     </div>
     
@@ -362,7 +499,9 @@
     </button>
     
     <!-- Progress indicator -->
-    <div class="scroll-progress no-print" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <div class="scroll-progress no-print" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="scroll-progress-bar"></div>
+    </div>
     
     <header class="sticky top-0 bg-slate-800 text-amber-300 p-4" role="banner">
       <div class="flex justify-between items-center">
@@ -426,7 +565,7 @@
         </div>
       </section>
 
-      <section id="skills" class="section-padding">
+      <section id="skills" class="section-padding skills-section">
         <div class="text-center">
           <h3 class="text-4xl text-green-200">Skills & Expertise</h3>
           <p class="text-xl text-white mb-8">Technologies I work with</p>
@@ -483,6 +622,15 @@
         </div>
       </section>
 
+      <section class="post-skills-content">
+        <p>
+          With over 1 years of experience in web development, I've developed a strong foundation in both front-end and back-end technologies. My approach combines technical expertise with creative problem-solving to deliver robust and user-friendly solutions.
+        </p>
+        <p>
+          I specialize in building responsive, accessible web applications using modern frameworks and best practices. My commitment to clean code and continuous learning ensures that I stay current with the latest industry trends and technologies.
+        </p>
+      </section>
+
       <section class="statistics section-padding">
         <div class="stat-item">
           <div class="stat-number" data-count="3">0</div>
@@ -503,30 +651,95 @@
       </section>
 
       <section class="certifications section-padding">
-        <div class="text-center mb-8">
+        <div class="text-center mb-12">
           <h3 class="text-4xl text-green-200">Certifications</h3>
-          <p class="text-xl text-white">Professional achievements</p>
+          <p class="text-xl text-white mb-8">Professional Achievements</p>
         </div>
-        <div class="certification-card">
-          <h4>Python Programming</h4>
-          <p>Completed comprehensive Python programming course</p>
-          <p class="text-sm mt-2">Issued by: Kanzu Code Foundation</p>
-        </div>
-        <div class="certification-card">
-          <h4>Web Development</h4>
-          <p>Mastered HTML, CSS, and JavaScript fundamentals</p>
-          <p class="text-sm mt-2">Issued by: Kanzu Code Foundation</p>
+        
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <i class='bx bx-certification cert-card__icon'></i>
+              <div>
+                <h4 class="cert-card__title">Web Development Bootcamp</h4>
+                <p class="cert-card__issuer">Kanzu Code Foundation</p>
+                <p class="cert-card__date">2023</p>
+              </div>
+            </div>
+            <p>Comprehensive web development course covering HTML, CSS, JavaScript, and modern frameworks.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <i class='bx bx-code-alt cert-card__icon'></i>
+              <div>
+                <h4 class="cert-card__title">Python Programming</h4>
+                <p class="cert-card__issuer">Kanzu Code Foundation</p>
+                <p class="cert-card__date">2022</p>
+              </div>
+            </div>
+            <p>Advanced Python programming with focus on data structures and algorithms.</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-card__header">
+              <i class='bx bx-data cert-card__icon'></i>
+              <div>
+                <h4 class="cert-card__title">Database Management</h4>
+                <p class="cert-card__issuer">Kanzu Code Foundation</p>
+                <p class="cert-card__date">2022</p>
+              </div>
+            </div>
+            <p>Database design, optimization, and management using SQL and NoSQL technologies.</p>
+          </div>
         </div>
       </section>
 
       <section class="testimonials section-padding">
-        <div class="text-center mb-8">
+        <div class="text-center mb-12">
           <h3 class="text-4xl text-green-200">Testimonials</h3>
-          <p class="text-xl text-white">What people say about my work</p>
+          <p class="text-xl text-white mb-8">What People Say</p>
         </div>
-        <div class="testimonial-card">
-          <p>"Mugabi's dedication to learning and improving his skills is impressive. His work on our projects has been exceptional."</p>
-          <p class="mt-4">- Mentor at Kanzu Code Foundation</p>
+        
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              Mugabi's attention to detail and problem-solving skills made him an invaluable asset to our team. His work consistently exceeded expectations.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">JD</div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">John Doe</p>
+                <p class="testimonial-card__role">Senior Developer at Kanzu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              Working with Mugabi was a pleasure. His technical expertise and ability to deliver quality work on time made our project a success.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">MT</div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">Mentor</p>
+                <p class="testimonial-card__role">Tech Lead at Kanzu</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p class="testimonial-card__quote">
+              Mugabi brought both technical skill and creative thinking to our projects. His solutions were always innovative and well-implemented.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">PM</div>
+              <div class="testimonial-card__info">
+                <p class="testimonial-card__name">Project Manager</p>
+                <p class="testimonial-card__role">Kanzu Code Foundation</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -554,353 +767,164 @@
       <p>Created by Mugabi Edwin &copy;<span id="year"></span></p>
     </footer>
     
-    <!-- Deferred script loading -->
     <script type="module">
       // Utility functions
       const debounce = (fn, delay) => {
         let timeoutId;
         return (...args) => {
-          clearTimeout(timeoutId);
+          if (timeoutId) clearTimeout(timeoutId);
           timeoutId = setTimeout(() => fn(...args), delay);
         };
       };
-      
-      // Intersection Observer for animations
-      const createObserver = (options = {}) => {
-        return new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-in');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, options);
-      };
-      
-      // Theme handling
-      const themeManager = {
-        init() {
-          this.body = document.body;
-          this.toggleBtn = document.getElementById('theme-toggle');
-          this.loadTheme();
-          this.attachListeners();
-        },
+
+      // Update scroll progress
+      const updateScrollProgress = () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector('.scroll-progress-bar');
+        const progressContainer = document.querySelector('.scroll-progress');
         
-        loadTheme() {
-          const savedTheme = localStorage.getItem('theme') || 'dark';
-          this.setTheme(savedTheme);
-        },
-        
-        setTheme(theme) {
-          this.body.classList.remove('dark-mode', 'light-mode');
-          this.body.classList.add(`${theme}-mode`);
-          localStorage.setItem('theme', theme);
-        },
-        
-        attachListeners() {
-          this.toggleBtn?.addEventListener('click', () => {
-            const newTheme = this.body.classList.contains('dark-mode') ? 'light' : 'dark';
-            this.setTheme(newTheme);
-          });
+        if (progressBar && progressContainer) {
+          progressBar.style.width = `${scrolled}%`;
+          progressContainer.setAttribute('aria-valuenow', Math.round(scrolled));
         }
       };
-      
-      // Form handling with validation
-      class ContactForm {
-        constructor(formId) {
-          this.form = document.getElementById(formId);
-          this.submitBtn = this.form?.querySelector('button[type="submit"]');
-          this.init();
-        }
-        
-        init() {
-          if (!this.form) return;
+
+      // Initialize animations with error handling
+      const initializeAnimations = () => {
+        try {
+          const animateElements = document.querySelectorAll('.skill-progress');
           
-          this.form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            if (!this.validateForm()) return;
-            
-            await this.handleSubmit();
-          });
-        }
-        
-        validateForm() {
-          const inputs = this.form.querySelectorAll('input, textarea');
-          let isValid = true;
-          
-          inputs.forEach(input => {
-            if (!input.checkValidity()) {
-              this.showError(input);
-              isValid = false;
-            } else {
-              this.clearError(input);
-            }
-          });
-          
-          return isValid;
-        }
-        
-        showError(input) {
-          const errorDiv = document.createElement('div');
-          errorDiv.className = 'error-message text-red-500 text-sm mt-1';
-          errorDiv.textContent = input.validationMessage;
-          input.parentNode.appendChild(errorDiv);
-        }
-        
-        clearError(input) {
-          const errorDiv = input.parentNode.querySelector('.error-message');
-          errorDiv?.remove();
-        }
-        
-        async handleSubmit() {
-          this.submitBtn.disabled = true;
-          this.submitBtn.textContent = 'Sending...';
-          
-          try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            this.form.reset();
-            this.submitBtn.textContent = 'Message Sent!';
-            
-            setTimeout(() => {
-              this.submitBtn.textContent = 'Send Message';
-              this.submitBtn.disabled = false;
-            }, 2000);
-          } catch (error) {
-            console.error('Form submission error:', error);
-            this.submitBtn.textContent = 'Error. Try Again';
-            this.submitBtn.disabled = false;
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('animate');
+                }
+              });
+            }, { threshold: 0.5 });
+
+            animateElements.forEach(el => observer.observe(el));
+          } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            animateElements.forEach(el => el.classList.add('animate'));
           }
+        } catch (error) {
+          console.error('Error initializing animations:', error);
         }
-      }
-      
-      // Initialize components
-      document.addEventListener('DOMContentLoaded', () => {
-        themeManager.init();
-        new ContactForm('contactForm');
-        
-        // Initialize animations
-        const observer = createObserver({
-          threshold: 0.1,
-          rootMargin: '50px'
-        });
-        
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-          observer.observe(el);
-        });
-      });
-      
-      // Performance optimizations
-      window.addEventListener('load', () => {
-        // Remove loader
-        document.querySelector('.loader')?.classList.add('fade-out');
-        
-        // Lazy load images
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        if ('loading' in HTMLImageElement.prototype) {
-          lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-          });
-        } else {
-          // Fallback for browsers that don't support lazy loading
-          const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                observer.unobserve(img);
+      };
+
+      // Animate statistics with error handling
+      const animateStatistics = () => {
+        try {
+          const stats = document.querySelectorAll('.stat-number');
+          
+          stats.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count') || '0');
+            let count = 0;
+            
+            const updateCount = () => {
+              const increment = target / 50;
+              if (count < target) {
+                count = Math.ceil(count + increment);
+                stat.textContent = count.toLocaleString();
+                requestAnimationFrame(updateCount);
+              } else {
+                stat.textContent = target.toLocaleString();
               }
-            });
-          });
-          
-          lazyImages.forEach(img => lazyImageObserver.observe(img));
-        }
-      });
-      
-      // Existing scripts...
-      // Year update
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Enhanced dark mode toggle
-      function toggleMode() {
-        const body = document.body;
-        const toggleIcon = document.getElementById('toggle-icon');
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
-        
-        if (body.classList.contains('dark-mode')) {
-          toggleIcon.classList.remove('bx-sun');
-          toggleIcon.classList.add('bx-moon');
-          localStorage.setItem('theme', 'dark');
-        } else {
-          toggleIcon.classList.remove('bx-moon');
-          toggleIcon.classList.add('bx-sun');
-          localStorage.setItem('theme', 'light');
-        }
-      }
-      
-      // Theme persistence
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        document.body.classList.remove('dark-mode', 'light-mode');
-        document.body.classList.add(`${savedTheme}-mode`);
-        const toggleIcon = document.getElementById('toggle-icon');
-        toggleIcon.classList.remove('bx-moon', 'bx-sun');
-        toggleIcon.classList.add(savedTheme === 'dark' ? 'bx-moon' : 'bx-sun');
-      }
-      
-      // Loading animation
-      window.addEventListener('load', () => {
-        const loader = document.querySelector('.loader');
-        setTimeout(() => {
-          loader.classList.add('fade-out');
-        }, 1000);
-      });
-      
-      // Back to top button
-      const backToTop = document.querySelector('.back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTop.classList.add('visible');
-        } else {
-          backToTop.classList.remove('visible');
-        }
-      });
-      
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      });
-      
-      // Add loading="lazy" to all images for better performance
-      document.querySelectorAll('img').forEach(img => {
-        img.setAttribute('loading', 'lazy');
-      });
-      
-      // Add ARIA labels to social links
-      document.querySelectorAll('a[href^="https://"]').forEach(link => {
-        if (!link.getAttribute('aria-label')) {
-          const icon = link.querySelector('i');
-          if (icon) {
-            const socialPlatform = icon.className.match(/bxl-(\w+)/)[1];
-            link.setAttribute('aria-label', `Visit my ${socialPlatform} profile`);
-          }
-        }
-      });
-      
-      // Scroll Progress Indicator
-      const scrollProgress = document.querySelector('.scroll-progress');
-      window.addEventListener('scroll', () => {
-        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrollTop = document.documentElement.scrollTop;
-        const width = (scrollTop / windowHeight) * 100;
-        scrollProgress.style.width = width + '%';
-      });
-      
-      // Project Filters
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const projects = document.querySelectorAll('.project-tile');
-      
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Remove active class from all buttons
-          filterBtns.forEach(b => b.classList.remove('active'));
-          // Add active class to clicked button
-          btn.classList.add('active');
-          
-          const filter = btn.dataset.filter;
-          
-          projects.forEach(project => {
-            if (filter === 'all' || project.dataset.category === filter) {
-              project.style.display = 'block';
-            } else {
-              project.style.display = 'none';
-            }
-          });
-        });
-      });
-      
-      // Calculate reading time
-      function calculateReadingTime(text) {
-        const wordsPerMinute = 200;
-        const words = text.trim().split(/\s+/).length;
-        const time = Math.ceil(words / wordsPerMinute);
-        return `${time} min read`;
-      }
-      
-      // Add reading time to project descriptions
-      document.querySelectorAll('.project-tile p').forEach(description => {
-        const readingTime = calculateReadingTime(description.textContent);
-        const timeElement = document.createElement('div');
-        timeElement.className = 'reading-time';
-        timeElement.textContent = readingTime;
-        description.parentNode.insertBefore(timeElement, description.nextSibling);
-      });
-      
-      // Animate statistics numbers
-      function animateNumbers() {
-        const stats = document.querySelectorAll('.stat-number');
-        
-        stats.forEach(stat => {
-          const target = parseInt(stat.dataset.count);
-          let current = 0;
-          const increment = target / 50; // Divide animation into 50 steps
-          
-          const timer = setInterval(() => {
-            current += increment;
-            stat.textContent = Math.round(current);
+            };
             
-            if (current >= target) {
-              stat.textContent = target;
-              clearInterval(timer);
-            }
-          }, 40);
-        });
-      }
-      
-      // Trigger number animation when section is in view
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateNumbers();
-            observer.unobserve(entry.target);
-          }
-        });
-      });
-      
-      const statistics = document.querySelector('.statistics');
-      if (statistics) {
-        observer.observe(statistics);
-      }
-      
-      // Contact form handling
-      function handleSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        
-        // Add loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-          submitBtn.textContent = 'Message Sent!';
-          form.reset();
+            updateCount();
+          });
+        } catch (error) {
+          console.error('Error animating statistics:', error);
+        }
+      };
+
+      // Dark mode toggle with error handling
+      window.toggleMode = () => {
+        try {
+          const body = document.body;
+          const icon = document.getElementById('toggle-icon');
           
-          setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          }, 2000);
-        }, 1500);
-        
-        return false;
-      }
+          if (!icon) throw new Error('Toggle icon not found');
+          
+          body.classList.toggle('light-mode');
+          if (body.classList.contains('light-mode')) {
+            icon.classList.replace('bx-moon', 'bx-sun');
+            localStorage.setItem('theme', 'light');
+          } else {
+            icon.classList.replace('bx-sun', 'bx-moon');
+            localStorage.setItem('theme', 'dark');
+          }
+        } catch (error) {
+          console.error('Error toggling theme:', error);
+        }
+      };
+
+      // Initialize
+      window.addEventListener('load', () => {
+        try {
+          // Remove loader
+          const loader = document.querySelector('.loader');
+          if (loader) {
+            loader.classList.add('fade-out');
+            setTimeout(() => loader.remove(), 1000);
+          }
+          
+          // Initialize features
+          initializeAnimations();
+          animateStatistics();
+          
+          // Set current year
+          const yearElement = document.getElementById('year');
+          if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+          }
+          
+          // Restore theme preference
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme) {
+            document.body.classList.toggle('light-mode', savedTheme === 'light');
+            const icon = document.getElementById('toggle-icon');
+            if (icon) {
+              icon.classList.replace(
+                savedTheme === 'light' ? 'bx-moon' : 'bx-sun',
+                savedTheme === 'light' ? 'bx-sun' : 'bx-moon'
+              );
+            }
+          }
+        } catch (error) {
+          console.error('Error during initialization:', error);
+        }
+      });
+
+      // Scroll handlers with error handling
+      window.addEventListener('scroll', debounce(() => {
+        try {
+          updateScrollProgress();
+          const backToTop = document.querySelector('.back-to-top');
+          if (backToTop) {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+          }
+        } catch (error) {
+          console.error('Error handling scroll:', error);
+        }
+      }, 10));
+
+      // Handle scroll to top with error handling
+      document.querySelector('.back-to-top')?.addEventListener('click', () => {
+        try {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        } catch (error) {
+          // Fallback for browsers that don't support smooth scrolling
+          window.scrollTo(0, 0);
+        }
+      });
     </script>
   </body>
 </html>
