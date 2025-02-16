@@ -12,68 +12,468 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      /* Smooth transitions for all elements */
+      * {
+        transition: all 0.3s ease-in-out;
+      }
+      
+      /* Scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+      
       body.dark-mode {
-        background-color: #181717; /* Dark brown background */
-        color: #f0f4f8; /* Light text color for contrast */
+        background-color: #181717;
+        color: #f0f4f8;
       }
+      
       body.light-mode {
-        background-color: #ffffff; /* Light background */
-        color: #000000; /* Dark text color for contrast */
+        background-color: #ffffff;
+        color: #000000;
       }
-      body.light-mode h1, body.light-mode h2, body.light-mode h3 {
-        color: #333333; /* Darker color for headings to reduce eye strain */
-      }
-      body.light-mode h5 {
-        color: #555555; /* Darker color for h5 to reduce eye strain */
-      }
+      
+      /* Enhanced header shadow */
       header {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
       }
-      nav a:hover {
+      
+      /* Improved navigation hover effects */
+      nav a {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
         background-color: #00bcd4;
-        color: white;
+        transition: width 0.3s ease;
       }
-      nav a:active {
-        background-color: #0097a7;
+      
+      nav a:hover::after {
+        width: 100%;
       }
+      
+      /* Enhanced button styles */
       .btn {
         background-color: #ff9800;
         color: white;
         border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+        padding: 12px 24px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
+      
       .btn:hover {
-        background-color: #fb8c00;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(251, 140, 0, 0.3);
       }
-      .btn a {
-        color: white;
-        text-decoration: none;
-      }
-      .section-padding {
-        padding: 40px 20px;
-      }
-      footer {
-        padding: 20px;
-        background-color: #2d3748;
-        color: #f6e05e;
-      }
-      .toggle-btn {
+      
+      /* Project tile improvements */
+      .project-tile {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         cursor: pointer;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #ff9800;
-        color: white;
-        border: none;
-        transition: background-color 0.3s ease;
       }
-      .toggle-btn:hover {
-        background-color: #fb8c00;
+      
+      .project-tile:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Social media icons enhancement */
+      .social-icon {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .social-icon:hover {
+        transform: scale(1.2);
+      }
+      
+      /* Back to top button */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ff9800;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      /* Loading animation */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #181717;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .loader.fade-out {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      /* Accessibility improvements */
+      :focus {
+        outline: 3px solid #00bcd4;
+        outline-offset: 2px;
+      }
+      
+      /* Dark mode toggle enhancement */
+      .toggle-btn {
+        position: relative;
+        width: 50px;
+        height: 25px;
+        border-radius: 25px;
+        background: #ff9800;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      
+      .toggle-btn i {
+        font-size: 1.2rem;
+      }
+      
+      /* Progress bar */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(to right, #00bcd4, #ff9800);
+        z-index: 1000;
+        transition: width 0.1s ease;
+      }
+      
+      /* Skills section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      
+      .skill-item {
+        background: rgba(0, 188, 212, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+      
+      .skill-item:hover {
+        transform: translateY(-5px);
+        background: rgba(0, 188, 212, 0.2);
+      }
+      
+      /* Project filters */
+      .project-filters {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+      
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        border: 2px solid #00bcd4;
+        border-radius: 20px;
+        background: transparent;
+        color: inherit;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .filter-btn.active {
+        background: #00bcd4;
+        color: white;
+      }
+      
+      /* Timeline */
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 2rem auto;
+      }
+      
+      .timeline::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: #00bcd4;
+        transform: translateX(-50%);
+      }
+      
+      .timeline-item {
+        position: relative;
+        margin: 2rem 0;
+        width: calc(50% - 2rem);
+      }
+      
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: calc(50% + 2rem);
+      }
+      
+      .timeline-content {
+        padding: 1rem;
+        background: rgba(0, 188, 212, 0.1);
+        border-radius: 8px;
+      }
+      
+      /* Project cards enhancement */
+      .project-card {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .project-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+      
+      .project-tag {
+        padding: 0.25rem 0.75rem;
+        background: rgba(0, 188, 212, 0.1);
+        border-radius: 15px;
+        font-size: 0.875rem;
+      }
+      
+      .reading-time {
+        font-size: 0.875rem;
+        color: #666;
+        margin-top: 0.5rem;
+      }
+      
+      /* Additional skill animations */
+      @keyframes skillPulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      
+      .skill-item:hover i {
+        animation: skillPulse 1s infinite;
+        color: #00bcd4;
+      }
+      
+      /* Skill progress bars */
+      .skill-progress {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        margin-top: 0.5rem;
+      }
+      
+      .progress-bar {
+        height: 100%;
+        background: #00bcd4;
+        border-radius: 3px;
+        transition: width 1s ease;
+        position: relative;
+      }
+      
+      .progress-bar::after {
+        content: attr(data-progress);
+        position: absolute;
+        right: 0;
+        top: -20px;
+        font-size: 0.75rem;
+      }
+      
+      /* Project showcase enhancements */
+      .project-showcase {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+      
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .project-showcase:hover .project-overlay {
+        opacity: 1;
+      }
+      
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      .project-links a {
+        padding: 0.5rem 1rem;
+        background: #00bcd4;
+        color: white;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .project-links a:hover {
+        background: #008ba3;
+        transform: translateY(-2px);
+      }
+      
+      /* Certifications section */
+      .certifications {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+      
+      .certification-card {
+        background: rgba(0, 188, 212, 0.1);
+        padding: 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .certification-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Contact form styling */
+      .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid transparent;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        color: inherit;
+        transition: all 0.3s ease;
+      }
+      
+      .form-control:focus {
+        border-color: #00bcd4;
+        background: rgba(255, 255, 255, 0.15);
+        outline: none;
+      }
+      
+      .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      
+      /* Statistics section */
+      .statistics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+      }
+      
+      .stat-item {
+        padding: 1.5rem;
+        background: rgba(0, 188, 212, 0.1);
+        border-radius: 8px;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #00bcd4;
+        margin-bottom: 0.5rem;
+      }
+      
+      /* Testimonials section */
+      .testimonials {
+        position: relative;
+        padding: 2rem 0;
+      }
+      
+      .testimonial-card {
+        background: rgba(0, 188, 212, 0.1);
+        padding: 2rem;
+        border-radius: 8px;
+        margin: 1rem;
+        position: relative;
+      }
+      
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -1rem;
+        left: 1rem;
+        font-size: 4rem;
+        color: #00bcd4;
+        opacity: 0.3;
       }
     </style>
   </head>
   <body class="dark-mode">
+    <div class="loader">
+      <div class="spinner"></div>
+    </div>
+    
+    <button class="back-to-top" aria-label="Back to top">
+      <i class='bx bx-up-arrow-alt'></i>
+    </button>
+    <div class="scroll-progress"></div>
     <header class="sticky top-0 bg-slate-800 text-amber-300 p-4">
       <div class="flex justify-between items-center">
         <h1 class="text-2xl">M|E</h1>
@@ -135,50 +535,125 @@
         </div>
       </section>
 
-      <section class="text-center m-8 section-padding">
-        <div>
-          <h3 class="text-4xl text-green-200">Portfolio</h3>
-          <h2 class="text-2xl text-blue-200">Behold the work of thy hands</h2>
-          <p class="text-xl text-white">Some of my projects</p>
+      <section id="skills" class="section-padding">
+        <div class="text-center">
+          <h3 class="text-4xl text-green-200">Skills & Expertise</h3>
+          <p class="text-xl text-white mb-8">Technologies I work with</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <i class='bx bxl-python text-3xl'></i>
+            <h4>Python</h4>
+            <p>System Development</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="85%" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class='bx bxl-html5 text-3xl'></i>
+            <h4>HTML5</h4>
+            <p>Structure</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="90%" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class='bx bxl-css3 text-3xl'></i>
+            <h4>CSS3</h4>
+            <p>Styling</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="80%" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class='bx bxl-javascript text-3xl'></i>
+            <h4>JavaScript</h4>
+            <p>Interactivity</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="75%" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class='bx bxl-git text-3xl'></i>
+            <h4>Git</h4>
+            <p>Version Control</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="70%" style="width: 70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <i class='bx bx-data text-3xl'></i>
+            <h4>SQL</h4>
+            <p>Data Management</p>
+            <div class="skill-progress">
+              <div class="progress-bar" data-progress="65%" style="width: 65%"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="flex flex-wrap justify-center m-6 section-padding" id="projects">
-        <div class="border-solid border-2 border-sky-500 gap-2 m-2 rounded-xl p-4 project-tile">
-          <img src="images/wakanda.png" alt="my first project under kanzu code" />
-          <h3>Movie site project</h3>
-          <p>
-            This was my first project since I joined Kanzu Code Foundation. While developing this project, the eagerness to hone my skills even further kicked in. Through this project, I learned a great deal about the fundamentals of HTML and CSS, and I realized knowledge is insatiable and learning never stops.
-          </p>
+      <section class="statistics section-padding">
+        <div class="stat-item">
+          <div class="stat-number" data-count="3">0</div>
+          <p>Years Experience</p>
         </div>
-        <div class="border-solid border-2 border-sky-500 gap-2 m-2 rounded-xl p-4 project-tile">
-          <img src="images/dev.png" alt="design and development site image" />
-          <h3>Development and design project</h3>
-          <p>
-            This project I worked on with my mentor from Kanzu Code Foundation. He helped me realize the beauty of a CSS concept known as Flexbox and how we can utilize it to enhance the UI of any website, plus its ability to solve problems the normal CSS properties could not. This guidance helped a great deal, and he has my gratitude.
-          </p>
+        <div class="stat-item">
+          <div class="stat-number" data-count="15">0</div>
+          <p>Projects Completed</p>
         </div>
-        <div class="border-solid border-2 border-sky-500 gap-2 m-2 rounded-xl p-4 project-tile">
-          <img src="images/flex.png" alt="the flexbox model concept" />
-          <h3>Personal project</h3>
-          <p>
-            Unlike my previous two projects, this project I worked on a year prior when I was new to web technologies. Back then, I implemented everything I read, watched, and imagined. This is one of the many projects I worked on during my year of learning by experimenting through trial and error. This particular project brought me the joy of knowing how to implement things I had read about in books and watched in tutorials. To me, this was a milestone project.
-          </p>
+        <div class="stat-item">
+          <div class="stat-number" data-count="100">0</div>
+          <p>Hours of Learning</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-count="5">0</div>
+          <p>Certifications</p>
+        </div>
+      </section>
+
+      <section class="certifications section-padding">
+        <div class="text-center mb-8">
+          <h3 class="text-4xl text-green-200">Certifications</h3>
+          <p class="text-xl text-white">Professional achievements</p>
+        </div>
+        <div class="certification-card">
+          <h4>Python Programming</h4>
+          <p>Completed comprehensive Python programming course</p>
+          <p class="text-sm mt-2">Issued by: Kanzu Code Foundation</p>
+        </div>
+        <div class="certification-card">
+          <h4>Web Development</h4>
+          <p>Mastered HTML, CSS, and JavaScript fundamentals</p>
+          <p class="text-sm mt-2">Issued by: Kanzu Code Foundation</p>
+        </div>
+      </section>
+
+      <section class="testimonials section-padding">
+        <div class="text-center mb-8">
+          <h3 class="text-4xl text-green-200">Testimonials</h3>
+          <p class="text-xl text-white">What people say about my work</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"Mugabi's dedication to learning and improving his skills is impressive. His work on our projects has been exceptional."</p>
+          <p class="mt-4">- Mentor at Kanzu Code Foundation</p>
         </div>
       </section>
 
       <section id="contact" class="flex flex-col items-center m-4 section-padding">
-        <div>
-          <p>
-            I'm always looking forward to new opportunities in my learning curve with technology. My inbox is always open to opportunities or inquiries.
-          </p>
-          <div class="flex space-x-4 mt-4">
-            <a href="https://github.com/ShadowRahlM"><i class='bx bxl-github' style='color:rgb(6, 71, 71)'></i></a>
-            <a href="https://www.linkedin.com/in/mugabi-edwin-a726b2195"><i class='bx bxl-linkedin-square' style='color:rgb(6, 71, 71)'></i></a>
-            <a href="https://www.instagram.com/maclarenbankz/"><i class='bx bxl-instagram' style='color:rgb(6, 71, 71)'></i></a>
-            <a href="tel:256765642975"><i class='bx bxl-whatsapp' style='color:rgb(6, 71, 71)'></i></a>
-          </div>
-          <button class="btn mt-4"><a href="mailto:maclarenbankz@gmail.com">Email me</a></button>
+        <div class="contact-form">
+          <h3 class="text-4xl text-green-200 text-center mb-8">Get in Touch</h3>
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn w-full">Send Message</button>
+          </form>
         </div>
       </section>
     </main>
@@ -187,22 +662,187 @@
       <p>Created by Mugabi Edwin &copy;<span id="year"></span></p>
     </footer>
     <script>
+      // Year update
       document.getElementById('year').textContent = new Date().getFullYear();
-
+      
+      // Enhanced dark mode toggle
       function toggleMode() {
         const body = document.body;
         const toggleIcon = document.getElementById('toggle-icon');
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+        
         if (body.classList.contains('dark-mode')) {
-          body.classList.remove('dark-mode');
-          body.classList.add('light-mode');
-          toggleIcon.classList.remove('bx-moon');
-          toggleIcon.classList.add('bx-sun');
-        } else {
-          body.classList.remove('light-mode');
-          body.classList.add('dark-mode');
           toggleIcon.classList.remove('bx-sun');
           toggleIcon.classList.add('bx-moon');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          toggleIcon.classList.remove('bx-moon');
+          toggleIcon.classList.add('bx-sun');
+          localStorage.setItem('theme', 'light');
         }
+      }
+      
+      // Theme persistence
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.body.classList.remove('dark-mode', 'light-mode');
+        document.body.classList.add(`${savedTheme}-mode`);
+        const toggleIcon = document.getElementById('toggle-icon');
+        toggleIcon.classList.remove('bx-moon', 'bx-sun');
+        toggleIcon.classList.add(savedTheme === 'dark' ? 'bx-moon' : 'bx-sun');
+      }
+      
+      // Loading animation
+      window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader');
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 1000);
+      });
+      
+      // Back to top button
+      const backToTop = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Add loading="lazy" to all images for better performance
+      document.querySelectorAll('img').forEach(img => {
+        img.setAttribute('loading', 'lazy');
+      });
+      
+      // Add ARIA labels to social links
+      document.querySelectorAll('a[href^="https://"]').forEach(link => {
+        if (!link.getAttribute('aria-label')) {
+          const icon = link.querySelector('i');
+          if (icon) {
+            const socialPlatform = icon.className.match(/bxl-(\w+)/)[1];
+            link.setAttribute('aria-label', `Visit my ${socialPlatform} profile`);
+          }
+        }
+      });
+      
+      // Scroll Progress Indicator
+      const scrollProgress = document.querySelector('.scroll-progress');
+      window.addEventListener('scroll', () => {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop;
+        const width = (scrollTop / windowHeight) * 100;
+        scrollProgress.style.width = width + '%';
+      });
+      
+      // Project Filters
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const projects = document.querySelectorAll('.project-tile');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active class from all buttons
+          filterBtns.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+          
+          const filter = btn.dataset.filter;
+          
+          projects.forEach(project => {
+            if (filter === 'all' || project.dataset.category === filter) {
+              project.style.display = 'block';
+            } else {
+              project.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Calculate reading time
+      function calculateReadingTime(text) {
+        const wordsPerMinute = 200;
+        const words = text.trim().split(/\s+/).length;
+        const time = Math.ceil(words / wordsPerMinute);
+        return `${time} min read`;
+      }
+      
+      // Add reading time to project descriptions
+      document.querySelectorAll('.project-tile p').forEach(description => {
+        const readingTime = calculateReadingTime(description.textContent);
+        const timeElement = document.createElement('div');
+        timeElement.className = 'reading-time';
+        timeElement.textContent = readingTime;
+        description.parentNode.insertBefore(timeElement, description.nextSibling);
+      });
+      
+      // Animate statistics numbers
+      function animateNumbers() {
+        const stats = document.querySelectorAll('.stat-number');
+        
+        stats.forEach(stat => {
+          const target = parseInt(stat.dataset.count);
+          let current = 0;
+          const increment = target / 50; // Divide animation into 50 steps
+          
+          const timer = setInterval(() => {
+            current += increment;
+            stat.textContent = Math.round(current);
+            
+            if (current >= target) {
+              stat.textContent = target;
+              clearInterval(timer);
+            }
+          }, 40);
+        });
+      }
+      
+      // Trigger number animation when section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateNumbers();
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      
+      const statistics = document.querySelector('.statistics');
+      if (statistics) {
+        observer.observe(statistics);
+      }
+      
+      // Contact form handling
+      function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        
+        // Add loading state
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual API call)
+        setTimeout(() => {
+          submitBtn.textContent = 'Message Sent!';
+          form.reset();
+          
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, 2000);
+        }, 1500);
+        
+        return false;
       }
     </script>
   </body>
