@@ -1456,17 +1456,17 @@
       <section id="contact" class="flex flex-col items-center m-4 section-padding">
         <div class="contact-form">
           <h3 class="text-4xl text-green-200 text-center mb-8">Get in Touch</h3>
-          <form id="contactForm" onsubmit="return handleSubmit(event)">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="btn w-full">Send Message</button>
+          <form id="contactForm" action="https://formspree.io/f/mqkoyzqk" method="post"></form>
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn w-full">Send Message</button>
           </form>
         </div>
       </section>
